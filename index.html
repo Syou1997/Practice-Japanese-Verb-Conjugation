@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>日本語動詞変化練習</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg">
+  <header class="topbar">
+    <h1>日本語動詞変化練習</h1>
+  </header>
+
+  <main class="container">
+    <section class="card-panel">
+      <div class="section-title">レッスンを選択</div>
+      <select id="lessonSelect" class="select"></select>
+
+      <div class="section-title mt-20">変換ターゲット（※1つだけ）</div>
+      <div class="chip-row">
+        <label class="chip"><input type="checkbox" name="target" value="dictionary"> 辞書形</label>
+        <label class="chip"><input type="checkbox" name="target" value="potential"> 可能形</label>
+        <label class="chip"><input type="checkbox" name="target" value="passive"> 受け身</label>
+        <label class="chip"><input type="checkbox" name="target" value="causative"> 使役</label>
+        <label class="chip"><input type="checkbox" name="target" value="causativePassive"> 使役受け身</label>
+        <label class="chip"><input type="checkbox" name="target" value="teform"> て形</label>
+      </div>
+
+      <div class="options">
+        <label class="switch">
+          <input type="checkbox" id="shuffleToggle">
+          <span>ランダム順</span>
+        </label>
+      </div>
+
+      <button type="button" id="btnStart" class="btn-primary mt-20" disabled>スタート</button>
+      <p id="homeError" class="error" role="alert" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">© 動詞変化フラッシュカード</footer>
+
+  <!-- 「このレッスンには動詞がありません。」モーダル -->
+  <dialog id="noDataDialog" class="modal">
+    <div class="modal-card" role="document" aria-labelledby="noDataTitle">
+      <div class="modal-header">
+        <h2 id="noDataTitle">お知らせ</h2>
+      </div>
+      <div class="modal-body">
+        <p class="modal-text">このレッスンには動詞がありません。</p>
+      </div>
+      <div class="modal-footer">
+        <button id="noDataClose" class="btn-primary">閉じる</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>

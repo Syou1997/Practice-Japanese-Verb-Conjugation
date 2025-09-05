@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>日本語動詞変化練習 - ゲーム</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg">
+  <header class="topbar">
+    <h1>日本語動詞変化練習</h1>
+    <div class="audio-bar">
+      <button id="btnBgm" class="btn-ghost">♪ BGM 再生</button>
+      <label class="switch small">
+        <input type="checkbox" id="seToggle" checked>
+        <span>効果音</span>
+      </label>
+      <label class="range-wrap small">
+        <span>SE音量</span>
+        <input type="range" id="seVol" min="0" max="1" step="0.01" value="0.6">
+      </label>
+      <label class="range-wrap small">
+        <span>BGM音量</span>
+        <input type="range" id="bgmVol" min="0" max="1" step="0.01" value="0.35">
+      </label>
+      <button id="btnExit" class="btn-ghost">終了</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="game-area">
+      <!-- 単語セレクト -->
+      <div class="word-select-wrap">
+        <label for="wordSelect">単語：</label>
+        <select id="wordSelect" class="select"></select>
+      </div>
+
+      <div id="progress" class="progress"></div>
+      <div class="progressbar"><div id="pbarFill" class="progressbar-fill"></div></div>
+
+      <div id="card" class="flip-card" tabindex="0" aria-label="カードをめくる">
+        <div class="flip-card-inner">
+          <div class="flip-face front" id="cardFront">—</div>
+          <div class="flip-face back" id="cardBack">—</div>
+        </div>
+      </div>
+
+      <div class="ctrl-row">
+        <button id="btnPrev" class="btn">前へ</button>
+        <button id="btnNext" class="btn">次へ</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 動詞変化フラッシュカード</footer>
+
+  <!-- ===== Audio Tags ===== -->
+  <!-- BGM -->
+  <audio id="bgm" src="assets/BGM.mp3" preload="auto" loop></audio>
+  <!-- 効果音 -->
+  <audio id="seFlip" src="assets/flip.mp3" preload="auto"></audio>
+  <audio id="sePrev" src="assets/prev.mp3" preload="auto"></audio>
+  <audio id="seNext" src="assets/next.mp3" preload="auto"></audio>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
